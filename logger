@@ -1,0 +1,13 @@
+import datetime
+
+def _timestamp():
+    return datetime.datetime.utcnow().strftime("%H:%M:%S")
+
+def log_info(message: str):
+    print(f"[INFO { _timestamp() }] {message}")
+
+def log_error(message: str):
+    print(f"[ERROR { _timestamp() }] {message}")
+
+def log_debug(message: str):
+    print(f"[DEBUG { _timestamp() }] {message}")
