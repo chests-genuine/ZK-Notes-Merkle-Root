@@ -1,0 +1,13 @@
+import json
+import sys
+
+def load_json(path: str) -> dict:
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"❌ File not found: {path}")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"❌ Invalid JSON in {path}: {e}")
+        sys.exit(1)
